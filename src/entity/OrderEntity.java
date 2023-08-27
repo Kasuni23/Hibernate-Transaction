@@ -42,4 +42,7 @@ public class OrderEntity {
     @OneToMany(mappedBy = "orderEntity", targetEntity = OrderDetailEntity.class)
     private List<OrderDetailEntity> orderDetailEntities;
 
+    public void setDate(java.util.Date date2) {
+    }
+
 }
