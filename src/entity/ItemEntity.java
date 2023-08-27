@@ -1,8 +1,11 @@
 package entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -22,7 +25,7 @@ import lombok.ToString;
 public class ItemEntity {
     @Id
     @Column(name = "ItemCode", length = 6, nullable = false)
-    private String itemCode;
+    private String id;
 
     @Column(name = "Description", length = 50, nullable = false)
     private String description;
@@ -34,6 +37,9 @@ public class ItemEntity {
     private Double unitPrice;
 
     @Column(name = "QtyOnHand", nullable = false)
-    private Integer qtyOnHand;
+    private Integer qoh;
+
+    @OneToMany(mappedBy = "itemEntity", targetEntity = OrderDetailEntity.class)
+    private List<OrderDetailEntity> orderDetailEntities;
 
 }

@@ -1,5 +1,9 @@
+import org.hibernate.Session;
+
+import Util.sessionFactoryConfiguration;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Session session = sessionFactoryConfiguration.getInstance().getSession();
     }
 }

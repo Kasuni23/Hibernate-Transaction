@@ -53,4 +53,8 @@ public class CustomerEntity {
     @Column(name = "PostalCode", length = 9)
     private String zipCode;
 
+    @ToString.Exclude
+    @OneToMany(mappedBy = "customerEntity", targetEntity = OrderEntity.class)
+    private List<OrderEntity> orderEntities;
+
 }
